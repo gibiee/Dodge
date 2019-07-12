@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/logo_rank"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:background="@drawable/logo_rank"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/info_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="※ 랭킹 1위의 메세지 ※"
+        android:textColor="#ff0000"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/logo_rank"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/btn_edit_save"
+        android:layout_width="35dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_edit"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintLeft_toRightOf="@id/info_0"
+        app:layout_constraintTop_toTopOf="@id/info_0"
+        app:layout_constraintBottom_toBottomOf="@id/info_0"/>
+
+    <EditText
+        android:id="@+id/edt_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF9800"
+        android:enabled="false"
+        android:singleLine="true"
+        app:layout_constraintTop_toBottomOf="@id/info_0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ListView
+        android:id="@+id/lv_rank"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="140dp"
+        app:layout_constraintTop_toBottomOf="@id/edt_message"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/info_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="※ 상위 10명의 랭킹이 표시됩니다."
+        android:textColor="#ffffff"
+        app:layout_constraintTop_toBottomOf="@id/lv_rank"
+        app:layout_constraintLeft_toLeftOf="@id/lv_rank" />
+
+    <TextView
+        android:id="@+id/info_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="※ 본인이 등록한 랭킹은 "
+        android:textColor="#ffffff"
+        app:layout_constraintLeft_toLeftOf="@id/info_1"
+        app:layout_constraintTop_toBottomOf="@id/info_1"/>
+
+    <TextView
+        android:id="@+id/info_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="노란색"
+        android:textColor="#FFEB3B"
+        app:layout_constraintTop_toTopOf="@id/info_2"
+        app:layout_constraintLeft_toRightOf="@id/info_2" />
+
+    <TextView
+        android:id="@+id/info_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="으로 표시됩니다."
+        android:textColor="#ffffff"
+        app:layout_constraintTop_toTopOf="@id/info_3"
+        app:layout_constraintLeft_toRightOf="@id/info_3" />
+
+    <TextView
+        android:id="@+id/info_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="※ 랭킹 "
+        android:textColor="#ffffff"
+        app:layout_constraintLeft_toLeftOf="@id/info_2"
+        app:layout_constraintTop_toBottomOf="@id/info_2"/>
+
+    <TextView
+        android:id="@+id/info_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1위"
+        android:textColor="#FF0000"
+        app:layout_constraintLeft_toRightOf="@id/info_5"
+        app:layout_constraintTop_toTopOf="@id/info_5"/>
+
+    <TextView
+        android:id="@+id/info_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="는 메세지를 남길 수 있습니다."
+        android:textColor="#ffffff"
+        app:layout_constraintTop_toTopOf="@id/info_6"
+        app:layout_constraintLeft_toRightOf="@id/info_6" />
+
+    <ImageButton
+        android:id="@+id/btn_returnMenu"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:background="@drawable/btn_menu"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/GameLogo"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/logo_dodge"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/btn_GamePlay"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="게임시작"
+        android:scaleType="fitXY"
+        android:background="@drawable/btn_game_start"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="50dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_GameRank"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/btn_GameRank"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/btn_rank"
+        android:layout_marginBottom="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="@id/btn_GamePlay"/>
+
+</android.support.constraint.ConstraintLayout>

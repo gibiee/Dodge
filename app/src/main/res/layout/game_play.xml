@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/game_layout"
+    android:background="@drawable/space">
+
+    <LinearLayout
+        android:id="@+id/scoreLayout"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/current_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="현재점수 : 0"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/craft"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:src="@drawable/craft"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/operation_keys"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/btn_left"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton
+            android:id="@+id/btn_up"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/btn_up"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton
+            android:id="@+id/btn_down"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/btn_down"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton
+            android:id="@+id/btn_right"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/btn_right"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/right_wall"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toRightOf="@id/game_layout"
+        app:layout_constraintRight_toRightOf="@+id/game_layout"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/info_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="※ 개발자1 ※\n취미로 안드로이드 공부 중인 대학생입니다.\n정작 제 폰(갤s4)에서 게임이 렉 걸리는건 비밀...\n개발을 개 발로 했나 봅니다.\ne-mail : gibisoft.company@gmail.com"
+        android:layout_marginTop="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="※ 개발자2 ※"
+        android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toLeftOf="@id/info_1"
+        app:layout_constraintTop_toBottomOf="@id/info_1"
+        />
+
+    <ImageButton
+        android:id="@+id/btn_returnMenu"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:background="@drawable/btn_menu"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

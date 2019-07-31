@@ -8,7 +8,7 @@
         android:id="@+id/info_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="※ 개발자1 ※\n취미로 안드로이드 공부 중인 대학생입니다.\n정작 제 폰(갤s4)에서 게임이 렉 걸리는건 비밀...\n개발을 개 발로 했나 봅니다.\ne-mail : gibisoft.company@gmail.com"
+        android:text="※ 개발자1 ※\n취미로 안드로이드 공부 중인 대학생입니다.\n정작 개발자 폰에서 게임이 렉 걸리는건 비밀...\n개발을 개 발로 했나 봅니다.\ne-mail : gibisoft.company@gmail.com"
         android:layout_marginTop="100dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -18,7 +18,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="※ 개발자2 ※"
+        android:text="※ 개발자2 ※\nGit을 연습한 계기와 앱을 개발하는 재미를\n느낀 것 같습니다.\n앞으로도 git에 해보아야겠습니다. ㅎㅎ\ne-mail : robolab1902@naver.com"
         android:layout_marginTop="50dp"
         app:layout_constraintLeft_toLeftOf="@id/info_1"
         app:layout_constraintTop_toBottomOf="@id/info_1"

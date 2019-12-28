@@ -50,7 +50,7 @@ public class GamePlay extends Fragment {
     ViewGroup rootView;
     Timer timer;
 
-    long score;
+    static long score;
     TextView current_score;
     ImageButton btn_left, btn_up, btn_down, btn_right;
     ImageView craft;
@@ -68,6 +68,8 @@ public class GamePlay extends Fragment {
     ProgressDialog mProgressDialog;
     FirebaseFirestore db;
     long score_10th;
+
+    boolean GameOver=false;
 
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -160,29 +162,21 @@ public class GamePlay extends Fragment {
                     long specialSeconds = 5;
 
                     public void handleMessage(Message msg) {
-                        // 3. 점수 갱신
-                        long currentTime = System.currentTimeMillis();
-                        score = (currentTime - startTime) / 1000;
-                        current_score.setText("현재 점수 : " + score);
-
-                        if(((currentTime - startTime) / 1000) == normalSeconds) { //5초 마다
-                            createBullets("일반", 1); //총알 1개씩 추가
-                            normalSeconds += 5;
-                        }
-                        if(((currentTime - startTime) / 1000) == specialSeconds) { //10초 마다
-                            createBullets("특수", 1); //총알 1개씩 추가
-                            specialSeconds += 10;
-                        }
 
                         for (int i = 0; i < bullets.size(); i++) {
                             // 1. 총알 이동과 반사
                             bullets.get(i).move();
                             bullets.get(i).reflection(bottomWall.getY() - bullets.get(i).getHeight(), rightWall.getX() - bullets.get(i).getWidth());
 
+                            if(GameOver) break;
+
+                            // 2. 충돌 체크
                             if(((int)bullets.get(i).getX() - 75 < (int)craft.getX() && (int)craft.getX() < (int)bullets.get(i).getX() + 75)
                                 && ((int)bullets.get(i).getY() - 75 < (int)craft.getY() && (int)craft.getY() < (int)bullets.get(i).getY() + 75)) {
                                     if(isCollisionDetected(craft, (int)craft.getX(), (int)craft.getY(), bullets.get(i), (int)bullets.get(i).getX(), (int)bullets.get(i).getY())) {
                                         timer.cancel();
+                                        GameOver = true;
+
                                         btn_up.setEnabled(false);
                                         btn_down.setEnabled(false);
                                         btn_left.setEnabled(false);
@@ -196,6 +190,22 @@ public class GamePlay extends Fragment {
                                     }
                             }
                         }
+
+                        if(!GameOver) {
+                            // 3. 점수 갱신
+                            long currentTime = System.currentTimeMillis();
+                            score = (currentTime - startTime) / 1000;
+                            current_score.setText("현재 점수 : " + score);
+
+                            if(((currentTime - startTime) / 1000) == normalSeconds) { //5초 마다
+                                createBullets("일반", 1); //총알 1개씩 추가
+                                normalSeconds += 5;
+                            }
+                            if(((currentTime - startTime) / 1000) == specialSeconds) { //10초 마다
+                                createBullets("특수", 1); //총알 1개씩 추가
+                                specialSeconds += 10;
+                            }
+                        }
                     }
                 };
                 TimerTask timertask = new TimerTask() {
@@ -206,7 +216,7 @@ public class GamePlay extends Fragment {
                     }
                 };
                 timer = new Timer();
-                timer.schedule(timertask, 0, 100);
+                timer.schedule(timertask, 0, 10);
 
             }
         });
@@ -216,7 +226,8 @@ public class GamePlay extends Fragment {
     public void createBullets(String type, int count) {
         int deviceWidth = (int) rightWall.getX();
         int deviceHeight = (int) bottomWall.getY();
-        int xsp_random, ysp_random, random;
+        int random; //총알 생성 위치에 대한 랜덤
+        int xsp_random, ysp_random;
 
         for (int i = 0; i < count; i++) {
             if(type == "일반") {

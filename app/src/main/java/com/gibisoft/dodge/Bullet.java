@@ -7,7 +7,7 @@ import android.util.TypedValue;
 public class Bullet extends android.support.v7.widget.AppCompatImageView {
     final int params_width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, getResources().getDisplayMetrics());
     final int params_height = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, getResources().getDisplayMetrics());
-    int xSpeed, ySpeed;
+    float xSpeed, ySpeed;
 
     public Bullet(Context context, int x, int y, int xSpeed, int ySpeed) {
         super(context);
@@ -18,8 +18,8 @@ public class Bullet extends android.support.v7.widget.AppCompatImageView {
         setLayoutParams(layoutParams);
 
         setX(x);setY(y);
-        this.xSpeed = xSpeed;
-        this.ySpeed = ySpeed;
+        this.xSpeed = xSpeed / (float)10.0;
+        this.ySpeed = ySpeed / (float)10.0;
     }
 
     public void move() {

@@ -1,8 +1,11 @@
 package com.gibisoft.dodge.ListView;
 
+import android.support.annotation.Keep;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+@Keep
 public class RankData {
     private String deviceId, initials;
     Long score, date;
